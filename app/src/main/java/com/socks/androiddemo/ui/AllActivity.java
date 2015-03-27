@@ -50,6 +50,8 @@ public class AllActivity extends BaseActivity {
 					new SpannableActivity().getClass()));
 			activityModels.add(new ActivityModel("Notification",
 					new NotifycationActivity().getClass()));
+			activityModels.add(new ActivityModel("OtherActivity",
+					new OtherActivity().getClass()));
 		}
 
 		@Override
