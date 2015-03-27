@@ -93,6 +93,12 @@ public class NotifycationActivity extends BaseActivity {
 				PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 				resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				mBuilder.setContentIntent(resultPendingIntent);
+
+				NotificationCompat.Action action = new NotificationCompat.Action.Builder( R.mipmap
+						.ic_launcher, "click",resultPendingIntent).build();
+
+				mBuilder.addAction(action);
+
 				NotificationManager mNotificationManager =
 						(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 				mNotificationManager.notify(2, mBuilder.build());
