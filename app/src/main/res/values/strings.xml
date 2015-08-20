@@ -3,4 +3,14 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_utils">UtilsActivity</string>
+    <string name="title_activity_intent">IntentActivity</string>
+    <string name="title_activity_load">LoadActivity</string>
+
+    <string name="welcome">Welcome to<b>Android</b>!
+    </string>
+
+    <string name="welcome_messages">Hello, %1$s! You have &lt;b>%2$d new messages&lt;/b>.</string>
+
+
 </resources>

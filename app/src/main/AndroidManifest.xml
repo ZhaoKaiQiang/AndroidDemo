@@ -1,28 +1,62 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.socks.androiddemo"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.socks.androiddemo"
+          xmlns:android="http://schemas.android.com/apk/res/android"
           android:versionCode="1"
-          android:versionName="1.0" >
+          android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="19"/>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
 
     <application
-        android:name="com.socks.androiddemo.base.MyApplication"
+        android:name=".base.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity android:name="com.socks.androiddemo.ui.AllActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.AllActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.socks.androiddemo.ui.SpannableActivity" />
-        <activity android:name="com.socks.androiddemo.ui.OtherActivity" />
-        <activity android:name="com.socks.androiddemo.ui.NotifycationActivity" />
+        <activity android:name=".ui.SpannableActivity"/>
+        <activity android:name=".ui.OtherActivity"/>
+        <activity android:name=".ui.NotifycationActivity"/>
+        <activity
+            android:name=".ui.UtilsActivity"
+            android:label="@string/title_activity_utils">
+        </activity>
+        <activity
+            android:name=".ui.IntentActivity"
+            android:label="@string/title_activity_intent">
+        </activity>
+        <activity
+            android:name=".ui.LoadActivity"
+            android:label="@string/title_activity_load">
+        </activity>
+        <activity
+            android:name=".ui.ReflectionActivity"
+            android:label="@string/title_activity_load">
+        </activity>
+        <activity
+            android:name=".ui.FocusActivity"
+            />
+        <activity
+            android:name=".ui.MenuActivity"
+            />
+        <activity
+            android:name=".ui.AnimatorActivity"
+            />
+        <activity
+            android:name=".ui.PointViewActivity"
+            />
     </application>
 
 </manifest>

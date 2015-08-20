@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item android:id="@+id/item1"
+          android:icon="@mipmap/ic_launcher"
+          android:title="item1"/>
+    <group android:id="@+id/group">
+        <item android:id="@+id/group_item1"
+              android:icon="@mipmap/ic_launcher"
+              android:onClick="onGroupItemClick"
+              android:title="group_item1"/>
+        <item android:id="@+id/group_item2"
+              android:icon="@mipmap/ic_launcher"
+              android:onClick="onGroupItemClick"
+              android:title="group_item2"/>
+    </group>
+    <item android:id="@+id/submenu"
+          android:title="submenu_title">
+        <menu>
+            <item android:id="@+id/submenu_item1"
+                  android:title="@string/hello_world"/>
+        </menu>
+    </item>
+</menu>

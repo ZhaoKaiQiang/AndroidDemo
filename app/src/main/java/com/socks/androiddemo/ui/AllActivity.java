@@ -33,11 +33,12 @@ public class AllActivity extends BaseActivity {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+			                        int position, long id) {
 				startActivity(new Intent(AllActivity.this, adater.getItem(
 						position).getActivityClass()));
 			}
 		});
+
 	}
 
 	private class AllActivityAdapter extends BaseAdapter {
@@ -47,11 +48,25 @@ public class AllActivity extends BaseActivity {
 		public AllActivityAdapter() {
 			activityModels = new ArrayList<ActivityModel>();
 			activityModels.add(new ActivityModel("SpannbleString",
-					new SpannableActivity().getClass()));
+					SpannableActivity.class));
 			activityModels.add(new ActivityModel("Notification",
-					new NotifycationActivity().getClass()));
+					NotifycationActivity.class));
 			activityModels.add(new ActivityModel("OtherActivity",
-					new OtherActivity().getClass()));
+					OtherActivity.class));
+			activityModels.add(new ActivityModel("IntentActivity",
+					IntentActivity.class));
+			activityModels.add(new ActivityModel("UtilsActivity",
+					UtilsActivity.class));
+			activityModels.add(new ActivityModel("ReflectionActivity",
+					ReflectionActivity.class));
+			activityModels.add(new ActivityModel("FocusActivity",
+					FocusActivity.class));
+			activityModels.add(new ActivityModel("MenuActivity",
+					MenuActivity.class));
+			activityModels.add(new ActivityModel("AnimatorActivity",
+					AnimatorActivity.class));
+			activityModels.add(new ActivityModel("PointViewActivity",
+					PointViewActivity.class));
 		}
 
 		@Override
@@ -104,7 +119,7 @@ public class AllActivity extends BaseActivity {
 		private Class<? extends Activity> activityClass;
 
 		public ActivityModel(String title,
-				Class<? extends Activity> activityClass) {
+		                     Class<? extends Activity> activityClass) {
 			this.title = title;
 			this.activityClass = activityClass;
 		}
