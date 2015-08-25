@@ -67,6 +67,10 @@ public class AllActivity extends BaseActivity {
 					AnimatorActivity.class));
 			activityModels.add(new ActivityModel("PointViewActivity",
 					PointViewActivity.class));
+			activityModels.add(new ActivityModel("Camera3DActivity",
+					Camera3DActivity.class));
+			activityModels.add(new ActivityModel("MatrixActivity",
+					MatrixActivity.class));
 		}
 
 		@Override

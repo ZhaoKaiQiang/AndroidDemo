@@ -11,6 +11,7 @@
     </string>
 
     <string name="welcome_messages">Hello, %1$s! You have &lt;b>%2$d new messages&lt;/b>.</string>
+    <string name="title_activity_test_transform_matrix">TestTransformMatrixActivity</string>
 
 
 </resources>
