@@ -42,7 +42,7 @@ public class MatrixActivity extends Activity implements OnTouchListener {
 
 		public TransformMatrixView(Context context) {
 			super(context);
-			bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+			bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.sophie);
 			matrix = new Matrix();
 		}
 
@@ -91,235 +91,56 @@ public class MatrixActivity extends Activity implements OnTouchListener {
 //			view.setImageMatrix(matrix);
 
 
-//			// 4. 缩放
+			// 4. 缩放
 //			matrix.setScale(2f, 2f);
-//			// 下面的代码是为了查看matrix中的元素
-//			float[] matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
-//
 //			// 做下面的平移变换，纯粹是为了让变换后的图像和原图像不重叠
 //			matrix.postTranslate(view.getImageBitmap().getWidth(), view.getImageBitmap().getHeight());
 //			view.setImageMatrix(matrix);
-//
-//			// 下面的代码是为了查看matrix中的元素
-//			matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
 
 
-//			// 5. 错切 - 水平
-//			matrix.setSkew(0.5f, 0f);
-//			// 下面的代码是为了查看matrix中的元素
-//			float[] matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
-//
+			// 5. 错切 - 水平
+//			matrix.setSkew(1f, 0f);
 //			// 做下面的平移变换，纯粹是为了让变换后的图像和原图像不重叠
 //			matrix.postTranslate(view.getImageBitmap().getWidth(), 0f);
 //			view.setImageMatrix(matrix);
-//
-//			// 下面的代码是为了查看matrix中的元素
-//			matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
+
 
 //			// 6. 错切 - 垂直
 //			matrix.setSkew(0f, 0.5f);
-//			// 下面的代码是为了查看matrix中的元素
-//			float[] matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
-//
 //			// 做下面的平移变换，纯粹是为了让变换后的图像和原图像不重叠
 //			matrix.postTranslate(0f, view.getImageBitmap().getHeight());
 //			view.setImageMatrix(matrix);
-//
-//			// 下面的代码是为了查看matrix中的元素
-//			matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
+
 
 //			7. 错切 - 水平 + 垂直
 //			matrix.setSkew(0.5f, 0.5f);
-//			// 下面的代码是为了查看matrix中的元素
-//			float[] matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
-//
 //			// 做下面的平移变换，纯粹是为了让变换后的图像和原图像不重叠
 //			matrix.postTranslate(0f, view.getImageBitmap().getHeight());
 //			view.setImageMatrix(matrix);
-//
-//			// 下面的代码是为了查看matrix中的元素
-//			matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
 
 //			// 8. 对称 (水平对称)
-//			float matrix_values[] = {1f, 0f, 0f, 0f, -1f, 0f, 0f, 0f, 1f};
-//			matrix.setValues(matrix_values);
-//			// 下面的代码是为了查看matrix中的元素
-//			float[] matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
-//
-//			// 做下面的平移变换，纯粹是为了让变换后的图像和原图像不重叠
-//			matrix.postTranslate(0f, view.getImageBitmap().getHeight() * 2f);
-//			view.setImageMatrix(matrix);
-//
-//			// 下面的代码是为了查看matrix中的元素
-//			matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
+			float matrix_values[] = {1f, 0f, 0f, 0f, -1f, 0f, 0f, 0f, 1f};
+			matrix.setValues(matrix_values);
+			// 做下面的平移变换，纯粹是为了让变换后的图像和原图像不重叠
+			matrix.postTranslate(0f, view.getImageBitmap().getHeight() * 2f);
+			view.setImageMatrix(matrix);
 
 //			// 9. 对称 - 垂直
 //			float matrix_values[] = {-1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f};
 //			matrix.setValues(matrix_values);
-//			// 下面的代码是为了查看matrix中的元素
-//			float[] matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
 //
 //			// 做下面的平移变换，纯粹是为了让变换后的图像和原图像不重叠
 //			matrix.postTranslate(view.getImageBitmap().getWidth() * 2f, 0f);
 //			view.setImageMatrix(matrix);
-//
-//			// 下面的代码是为了查看matrix中的元素
-//			matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
-
 
 //			// 10. 对称(对称轴为直线y = x)
 //			float matrix_values[] = {0f, -1f, 0f, -1f, 0f, 0f, 0f, 0f, 1f};
 //			matrix.setValues(matrix_values);
-//			// 下面的代码是为了查看matrix中的元素
-//			float[] matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
 //
 //			// 做下面的平移变换，纯粹是为了让变换后的图像和原图像不重叠
 //			matrix.postTranslate(view.getImageBitmap().getHeight() + view.getImageBitmap().getWidth(),
 //					view.getImageBitmap().getHeight() + view.getImageBitmap().getWidth());
 //			view.setImageMatrix(matrix);
-//
-//			// 下面的代码是为了查看matrix中的元素
-//			matrixValues = new float[9];
-//			matrix.getValues(matrixValues);
-//			for(int i = 0; i < 3; ++i)
-//			{
-//				String temp = new String();
-//				for(int j = 0; j < 3; ++j)
-//				{
-//					temp += matrixValues[3 * i + j ] + "\t";
-//				}
-//				Log.e("TestTransformMatrixActivity", temp);
-//			}
 
 			// 下面的代码是为了查看matrix中的元素
 			float[] matrixValues = new float[9];

@@ -11,4 +11,3 @@ app/build/
 app/app.iml
 local.properties
 app/flavors.gradle
-imagelibrary/src/main/obj/

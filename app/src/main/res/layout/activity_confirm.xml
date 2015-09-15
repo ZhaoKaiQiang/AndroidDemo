@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="progressing"
+            android:text="progressing" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="fail"
+            android:text="fail" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="success"
+            android:text="success" />
+    </LinearLayout>
+
+
+    <com.socks.androiddemo.view.ConfirmView
+        android:id="@+id/confirm_view"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_centerInParent="true" />
+
+
+</RelativeLayout>
