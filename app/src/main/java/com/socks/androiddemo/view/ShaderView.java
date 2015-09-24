@@ -1,42 +1,25 @@
 package com.socks.androiddemo.view;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
 import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.TextView;
-
-import com.socks.androiddemo.R;
+import android.view.View;
 
 /**
- * Created by zhaokaiqiang on 15/9/7.
+ * Created by zhaokaiqiang on 15/9/17.
  */
-public class ShaderView extends TextView {
+public class ShaderView extends View {
 
-    private Drawable mDrawable;
-    private BitmapShader shader;
-    private Matrix shaderMatrix;
-    private float offsetY;
+    private float mWidth;
+    private float mHeight;
 
-    public interface AnimationSetupCallback {
-        public void onSetupAnimation(ShaderView titanicTextView);
-    }
+    private Paint mPaint;
 
-    private AnimationSetupCallback animationSetupCallback;
-    // wave shader coordinates
-    private float maskX, maskY;
-    // if true, the shader will display the wave
-    private boolean sinking;
-    // true after the first onSizeChanged
-    private boolean setUp;
-
-
-    private boolean setup = false;
+    LinearGradient linearGradient;
 
     public ShaderView(Context context) {
         super(context);
@@ -54,110 +37,22 @@ public class ShaderView extends TextView {
     }
 
     private void init() {
-        shaderMatrix = new Matrix();
-    }
-
-    @Override
-    public void setTextColor(int color) {
-        super.setTextColor(color);
-        createShader();
-    }
-
-    @Override
-    public void setTextColor(ColorStateList colors) {
-        super.setTextColor(colors);
-        createShader();
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        createShader();
-        if (!setUp) {
-            setUp = true;
-            if (animationSetupCallback != null) {
-                animationSetupCallback.onSetupAnimation(ShaderView.this);
-            }
-        }
-    }
-
-    private void createShader() {
-        if (mDrawable == null) {
-            mDrawable = getResources().getDrawable(R.drawable.wave);
-        }
-
-        int waveW = mDrawable.getIntrinsicWidth();
-        int waveH = mDrawable.getIntrinsicHeight();
-
-        Bitmap bitmap = Bitmap.createBitmap(waveW, waveH, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        canvas.drawColor(getCurrentTextColor());
-        mDrawable.setBounds(0, 0, waveW, waveH);
-        mDrawable.draw(canvas);
-        shader = new BitmapShader(bitmap, Shader.TileMode.REPEAT, Shader.TileMode.CLAMP);
-        getPaint().setShader(shader);
-        offsetY = (getHeight() - waveH) / 2;
-
-    }
-
-    public float getMaskX() {
-        return maskX;
-    }
-
-    public void setMaskX(float maskX) {
-        this.maskX = maskX;
-        invalidate();
-    }
-
-    public float getMaskY() {
-        return maskY;
-    }
-
-    public void setMaskY(float maskY) {
-        this.maskY = maskY;
-        invalidate();
-    }
-
-    public boolean isSinking() {
-        return sinking;
-    }
-
-    public void setSinking(boolean sinking) {
-        this.sinking = sinking;
-    }
-
-    public boolean isSetUp() {
-        return setUp;
-    }
-
-    public AnimationSetupCallback getAnimationSetupCallback() {
-        return animationSetupCallback;
-    }
-
-    public void setAnimationSetupCallback(AnimationSetupCallback animationSetupCallback) {
-        this.animationSetupCallback = animationSetupCallback;
+        mWidth = w;
+        mHeight = h;
+        linearGradient = new LinearGradient(0, 0, 0, mHeight / 2,
+                new int[]{Color.RED, Color.YELLOW},
+                new float[]{0.2f, 0.8f}, Shader.TileMode.CLAMP);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-
-        if (sinking && shader != null) {
-
-            // first call after sinking, assign it to our paint
-            if (getPaint().getShader() == null) {
-                getPaint().setShader(shader);
-            }
-
-            // translate shader accordingly to maskX maskY positions
-            // maskY is affected by the offset to vertically center the wave
-            shaderMatrix.setTranslate(maskX, maskY + offsetY);
-
-            // assign matrix to invalidate the shader
-            shader.setLocalMatrix(shaderMatrix);
-        } else {
-            getPaint().setShader(null);
-        }
-
-        super.onDraw(canvas);
+        mPaint.setShader(linearGradient);
+        canvas.drawRect(0, 0, mWidth / 2, mHeight / 2, mPaint);
     }
 }

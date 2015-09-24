@@ -26,7 +26,7 @@ public class Titanic {
         this.animatorListener = animatorListener;
     }
 
-    public void start(final ShaderView textView) {
+    public void start(final BitmapShaderView textView) {
 
         final Runnable animate = new Runnable() {
             @Override
@@ -94,9 +94,9 @@ public class Titanic {
         };
 
         if (!textView.isSetUp()) {
-            textView.setAnimationSetupCallback(new ShaderView.AnimationSetupCallback() {
+            textView.setAnimationSetupCallback(new BitmapShaderView.AnimationSetupCallback() {
                 @Override
-                public void onSetupAnimation(final ShaderView target) {
+                public void onSetupAnimation(final BitmapShaderView target) {
                     animate.run();
                 }
             });

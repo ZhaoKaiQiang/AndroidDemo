@@ -44,10 +44,13 @@
         <activity android:name=".ui.Camera3DActivity" />
         <activity android:name=".ui.MatrixActivity" />
         <activity android:name=".ui.ApkFileInfoActivity" />
-        <activity android:name=".ui.ShaderActivity" />
+        <activity android:name=".ui.BitmapShaderActivity" />
         <activity android:name=".ui.ColorMatrixActivity" />
         <activity android:name=".ui.ConfirmActivity" />
         <activity android:name=".ui.FllowerActivity" />
+        <activity android:name=".ui.ShaderActivity" />
+        <activity android:name=".ui.CanvasActivity" />
+        <activity android:name=".ui.FloatingActionButtonActivity" />
     </application>
 
 </manifest>

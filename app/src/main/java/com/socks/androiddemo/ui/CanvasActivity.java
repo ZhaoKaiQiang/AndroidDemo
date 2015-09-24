@@ -8,12 +8,12 @@ import com.socks.androiddemo.base.BaseActivity;
 /**
  * Created by zhaokaiqiang on 15/9/7.
  */
-public class ShaderActivity extends BaseActivity {
+public class CanvasActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shader);
+        setContentView(R.layout.activity_canvas);
     }
 
 }

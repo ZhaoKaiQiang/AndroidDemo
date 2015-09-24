@@ -73,14 +73,20 @@ public class AllActivity extends BaseActivity {
                     MatrixActivity.class));
             activityModels.add(new ActivityModel("ApkFileInfoActivity",
                     ApkFileInfoActivity.class));
-            activityModels.add(new ActivityModel("ShaderActivity",
-                    ShaderActivity.class));
+            activityModels.add(new ActivityModel("BitmapShaderActivity",
+                    BitmapShaderActivity.class));
             activityModels.add(new ActivityModel("ColorMatrixActivity",
                     ColorMatrixActivity.class));
             activityModels.add(new ActivityModel("FllowerActivity",
                     FllowerActivity.class));
             activityModels.add(new ActivityModel("ConfirmActivity",
                     ConfirmActivity.class));
+            activityModels.add(new ActivityModel("ShaderActivity",
+                    ShaderActivity.class));
+            activityModels.add(new ActivityModel("CanvasActivity",
+                    CanvasActivity.class));
+            activityModels.add(new ActivityModel("FloatingActionButtonActivity",
+                    FloatingActionButtonActivity.class));
         }
 
         @Override
